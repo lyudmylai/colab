@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Project" representedClassName="Project" syncable="YES" codeGenerationType="class">
+        <attribute name="projectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projectTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="skills" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Skill" inverseName="projects" inverseEntity="Skill" syncable="YES"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="projects" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Skill" representedClassName="Skill" syncable="YES" codeGenerationType="class">
+        <attribute name="skillId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skillName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="projects" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="skills" inverseEntity="Project" syncable="YES"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="skills" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="projects" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="users" inverseEntity="Project" syncable="YES"/>
+        <relationship name="skills" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Skill" inverseName="users" inverseEntity="Skill" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Skill" positionX="-36" positionY="27" width="128" height="105"/>
+        <element name="User" positionX="-54" positionY="0" width="128" height="105"/>
+    </elements>
+</model>
